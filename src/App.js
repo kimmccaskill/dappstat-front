@@ -35,7 +35,7 @@ class App extends React.Component {
       }
     }
 
-    fetch('https://dappstat-backend.herokuapp.com/dashboard-info-2', options)
+    fetch('https://dappstat-backend.herokuapp.com/analyze', options)
       .then(response => {
         if(!response.ok) {
             throw Error('Errow while fetching')
@@ -47,7 +47,7 @@ class App extends React.Component {
           localStorage.setItem('data', JSON.stringify(this.state.data))
         })
       })
-      .catch(err => console.log('error'))
+      .catch(err => console.log('error: ', err))
   }
   
   render() {
