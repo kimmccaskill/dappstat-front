@@ -29,7 +29,7 @@ class App extends React.Component {
   fetchDetails() {
     const options = {
       method: 'POST',
-      body: JSON.stringify({data: true}),
+      body: JSON.stringify({dapp_address: this.state.address, category: this.state.selected_cat}),
       headers: {
         'Content-Type': 'application/json'
       }
