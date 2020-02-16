@@ -1,7 +1,8 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 80%;
+  color: white;
 }
 
 label {
@@ -9,13 +10,18 @@ label {
 }
 
 .analytics-title {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   margin-top: 5%;
 }
 
 .card {
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 10px;
   padding: 1% 5% 3% 5%;
   margin: 1%;
+}
+
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
 }
