@@ -3,6 +3,9 @@ import './Dashboard.css';
 import { Link } from 'react-router-dom';
 
 const Dashboard = ({ results }) => {
+  const ooiArr = results.ooi.map(org => <p>{org.name}</p>);
+  const externalArr = results.external_ooi.map(org => <p>{org.name}</p>);
+
   return(
     <section className='dashboard'>
       <h2 className='analytics-title'>
@@ -11,16 +14,20 @@ const Dashboard = ({ results }) => {
       <h3>Total Number of users: {results.users.count}</h3>
       <h3>Total Unique users: 16</h3>
       <h3>Total Shared users: 14</h3>
-      <ul className='card'>
-        <h4>Organizations of Interest:</h4>
-        <li>My Crypto Heroes</li>
-        <li>Brave Frontier Heroes</li>
-      </ul>
-      <ul className='card'>
-        <h4>External Organizations:</h4>
-        <li>0xUniverse</li>
-        <li>Knight Story</li>
-      </ul>
+      <div className='card-container'>
+        <article>
+          <h4>Organizations of Interest:</h4>
+          <div className='card'>
+            {ooiArr}
+          </div>
+        </article>
+        <article>
+          <h4>External Organizations:</h4>
+          <div className='card'>
+            {externalArr}
+          </div>
+        </article>
+      </div>
       <div className='nav-btns'>
         <Link to="/">
           <button>Back</button>
@@ -29,7 +36,6 @@ const Dashboard = ({ results }) => {
           <button>Next</button>
         </Link>
       </div>
-
     </section>
   )
 }

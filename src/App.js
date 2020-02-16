@@ -13,6 +13,7 @@ class App extends React.Component {
       address: '',
       selected_cat: '',
       loading: false,
+      data: JSON.parse(localStorage.getItem('data')) || {}
     }
   }
 
@@ -42,7 +43,9 @@ class App extends React.Component {
         return response.json()}
     )
       .then(data => {
-        this.setState({loading: false,data})
+        this.setState({loading: false,data},() => {
+          localStorage.setItem('data', JSON.stringify(this.state.data))
+        })
       })
       .catch(err => console.log('error'))
   }
