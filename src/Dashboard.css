@@ -7,3 +7,15 @@
 label {
   margin: 2%;
 }
+
+.analytics-title {
+  border-bottom: 1px solid black;
+  margin-top: 5%;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1% 5% 3% 5%;
+  margin: 1%;
+}
