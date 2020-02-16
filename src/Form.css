@@ -24,16 +24,21 @@ input {
   font-size: 1em;
 }
 
-.submit-link {
-  margin: 8% 2% 2% 2%;
-  width: 50%;
-}
-
 .submit-btn {
-  width: 100%;
+  width: 50%;
   height: 40px;
   font-size: 1em;
-  /* align-self: center; */
+  margin: 8% 2% 2% 2%;
+}
+
+.input-error {
+  text-align: center;
+  color: red;
+  animation: shake-top 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.hidden {
+  display: none;
 }
 
 
