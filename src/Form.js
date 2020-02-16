@@ -1,5 +1,7 @@
 import React from 'react';
 import './Form.css';
+import { Link } from 'react-router-dom';
+
 
 class Form extends React.Component {
   constructor(props) {
@@ -23,7 +25,9 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className='form'>
+      <form className='form'>
+        <h1>DApp Stat!</h1>
+        <h2>Let the fun begin.</h2>
         <label className='address-section'>
           Address:
           <input type="text" value={this.state.address} onChange={this.handleChange} />
@@ -36,7 +40,9 @@ class Form extends React.Component {
             <option value="Marketplaces">Marketplaces</option>
           </select>
         </label>
-        <button className='submit-btn'>Submit</button>
+        <Link className='submit-link' to={'/dashboard'}>
+          <button type='button' className='submit-btn'>Submit</button>
+        </Link>
       </form>
     );
   }

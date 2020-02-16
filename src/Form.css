@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   font-size: 1em;
+  align-items: center;
 }
 
 .category-section,
@@ -23,12 +24,15 @@ input {
   font-size: 1em;
 }
 
-.submit-btn {
+.submit-link {
   margin: 8% 2% 2% 2%;
-  width: 30%;
+}
+
+.submit-btn {
+  width: 100%;
   height: 40px;
   font-size: 1em;
-  align-self: center;
+  /* align-self: center; */
 }
 
 
