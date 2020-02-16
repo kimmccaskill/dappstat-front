@@ -4,37 +4,26 @@ import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   return(
-    <form>
+    <section className='dashboard'>
+      <h2>
+        Analytics
+      </h2>
       <label>
-        Analytics:
+        Number of users:
       </label>
-      <br />
       <label>
-        Number of guests:
-
+        Organizations of Interest:
       </label>
-      <br />
       <label>
-        Orgainzation of Interest:
-
+        External Organizations:
       </label>
-      <br />
-      <label>
-        External Org:
-
-      </label>
-      <br />
       <label>
         Unique Users:
-
-
       </label>
-      <br />
       <label>
         Shared Users:
-
       </label>
-    </form>
+    </section>
   )
 }
 
