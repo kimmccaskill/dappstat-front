@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Form from './Form.js';
 import Dashboard from './Dashboard.js';
+import GraphPage from './GraphPage.js';
 import { RotateCircleLoading } from 'react-loadingg';
 import { Route } from 'react-router-dom';
 
@@ -56,6 +57,7 @@ class App extends React.Component {
         </header>
         <Route exact path='/' render={() => <Form submitInfo={this.submitInfo} />} />
           {loading ? <RotateCircleLoading /> : <Route exact path='/dashboard' render={() => <Dashboard results={data} />} />}
+        <Route exact path='/graphs' render={() => <GraphPage results={data} />} />
       </main>
     );
   }
