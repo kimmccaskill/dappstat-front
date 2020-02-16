@@ -1,6 +1,6 @@
 import React from 'react';
 import './Form.css';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 
 class Form extends React.Component {
@@ -8,7 +8,9 @@ class Form extends React.Component {
     super();
     this.state = {
       address: '',
-      selected_cat: ''
+      selected_cat: '',
+      showError: false,
+      formFilled: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -19,10 +21,21 @@ class Form extends React.Component {
   }
 
   submitForm = () => {
-    this.props.submitInfo(this.state)
+    if (this.state.address && this.state.selected_cat) {
+      this.props.submitInfo(this.state)
+      this.setState({formFilled: true})
+    } else {
+      this.setState({showError: true})
+    }
   }
 
   render() {
+    if(this.state.formFilled) {
+      return(
+        <Redirect to="/dashboard" />
+      )
+    }
+
     return (
       <form className='form'>
         <h2>Let the fun begin.</h2>
@@ -40,9 +53,9 @@ class Form extends React.Component {
             <option value="Gambling">Gambling</option>
           </select>
         </label>
-        <Link className='submit-link' to={'/dashboard'}>
           <button type='button' onClick={this.submitForm} className='submit-btn'>Submit</button>
-        </Link>
+          <h4 className={this.state.showError ? 'input-error':'hidden'}
+          >Please fill all inputs.</h4>
       </form>
     );
   }
