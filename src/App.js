@@ -6,13 +6,34 @@ import Dashboard from './Dashboard.js'
 
 import { Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <main className='app'>
-      <Route exact path='/' render={() => <Form />} />
-      <Route exact path='/dashboard' render={() => <Dashboard />} />
-    </main>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      address: '',
+      selected_cat: ''
+    }
+  }
+
+  submitInfo = (info) => {
+    this.setState({
+      address: info.address,
+      selected_cat: info.selected_cat
+    })
+  }
+  
+  render() {
+    return (
+      <main className='app'>
+        <header className='header'>
+          <h1>DappStat</h1>
+        </header>
+        <Route exact path='/' render={() => <Form submitInfo={this.submitInfo} />} />
+        <Route exact path='/dashboard' render={() => <Dashboard />} />
+      </main>
+    );
+  }
+
 }
 
 export default App;
