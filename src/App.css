@@ -8,6 +8,10 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url('./dash-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-shadow: 0 0 3px #000;
 }
 
 .header {
