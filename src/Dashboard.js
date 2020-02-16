@@ -21,9 +21,15 @@ const Dashboard = ({ results }) => {
         <li>0xUniverse</li>
         <li>Knight Story</li>
       </ul>
-      <Link to="/">
-        <button>Back</button>
-      </Link>
+      <div className='nav-btns'>
+        <Link to="/">
+          <button>Back</button>
+        </Link>
+        <Link to="/graphs">
+          <button>Next</button>
+        </Link>
+      </div>
+
     </section>
   )
 }
