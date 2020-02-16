@@ -3,6 +3,9 @@ import './Dashboard.css';
 import { Link } from 'react-router-dom';
 
 const Dashboard = ({ results }) => {
+  const ooiArr = results.ooi.map(org => <p>{org.name}</p>);
+  const externalArr = results.external_ooi.map(org => <p>{org.name}</p>);
+
   return(
     <section className='dashboard'>
       <h2 className='analytics-title'>
@@ -15,15 +18,13 @@ const Dashboard = ({ results }) => {
         <article>
           <h4>Organizations of Interest:</h4>
           <div className='card'>
-            <p>My Crypto Heroes</p>
-            <p>Brave Frontier Heroes</p>
+            {ooiArr}
           </div>
         </article>
         <article>
           <h4>External Organizations:</h4>
           <div className='card'>
-            <p>0xUniverse</p>
-            <p>Knight Story</p>
+            {externalArr}
           </div>
         </article>
       </div>
