@@ -23,6 +23,9 @@ const Dashboard = () => {
       <label>
         Shared Users:
       </label>
+      <Link to="/">
+        <button>Back</button>
+      </Link>
     </section>
   )
 }
