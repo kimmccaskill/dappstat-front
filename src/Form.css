@@ -3,6 +3,8 @@
   flex-direction: column;
   font-size: 1em;
   align-items: center;
+  color: white;
+  padding: 5%;
 }
 
 .category-section,
@@ -34,7 +36,6 @@ input {
 .input-error {
   text-align: center;
   color: red;
-  animation: shake-top 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 .hidden {
