@@ -11,16 +11,22 @@ const Dashboard = ({ results }) => {
       <h3>Total Number of users: {results.users.count}</h3>
       <h3>Total Unique users: 16</h3>
       <h3>Total Shared users: 14</h3>
-      <ul className='card'>
-        <h4>Organizations of Interest:</h4>
-        <li>My Crypto Heroes</li>
-        <li>Brave Frontier Heroes</li>
-      </ul>
-      <ul className='card'>
-        <h4>External Organizations:</h4>
-        <li>0xUniverse</li>
-        <li>Knight Story</li>
-      </ul>
+      <div className='card-container'>
+        <article>
+          <h4>Organizations of Interest:</h4>
+          <div className='card'>
+            <p>My Crypto Heroes</p>
+            <p>Brave Frontier Heroes</p>
+          </div>
+        </article>
+        <article>
+          <h4>External Organizations:</h4>
+          <div className='card'>
+            <p>0xUniverse</p>
+            <p>Knight Story</p>
+          </div>
+        </article>
+      </div>
       <div className='nav-btns'>
         <Link to="/">
           <button>Back</button>
@@ -29,7 +35,6 @@ const Dashboard = ({ results }) => {
           <button>Next</button>
         </Link>
       </div>
-
     </section>
   )
 }
